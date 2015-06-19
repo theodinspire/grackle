@@ -13,7 +13,7 @@ public class Modifier {
 		));
 	
 	static String getModifier() {
-		return getModifier(System.nanoTime());
+		return getModifier(new Random());
 	}
 	
 	static String getModifier(long seed) {

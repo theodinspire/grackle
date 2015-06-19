@@ -10,9 +10,18 @@ public class PassGen {
 		while (password.length() > charLimit - digitWidth)
 			password = Birds.getString(rand);
 		
-		
-		while (password.length() <= minChar - digitWidth)
-			password = Modifier.getModifier(rand) + password;
+		if (password.length() <= minChar - digitWidth) {
+			String candidate = Modifier.getModifier(rand);
+			int count = 0;
+			
+			while ((candidate.length() + password.length() > charLimit - digitWidth
+					|| candidate.length() + password.length() < minChar - digitWidth)
+					&& count++ < 100)
+				candidate = Modifier.getModifier(rand);
+			if (count == 100)
+				candidate = "";
+			password = candidate + password;
+		}
 		
 		password += String.format("%0" + digitWidth + "d", rand.nextInt(100));
 		return password;

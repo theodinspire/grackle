@@ -51,7 +51,7 @@ public class Grackle {
 	 */
 	public Grackle() {
 		System.out.println(System.getProperty("user.dir"));
-		password = PassGen.getPassword();
+		password = generateNewPassword();
 		initialize();
 	}
 
@@ -101,7 +101,7 @@ public class Grackle {
 		JButton btnGenerateNew = new JButton("Generate New");
 		btnGenerateNew.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				generateNewPassword();
+				password = generateNewPassword();
 				lblPassword.setText(password);
 			}
 		});
@@ -123,8 +123,8 @@ public class Grackle {
 		clpbrd.setContents(pwdSelection, null);
 	}
 	
-	private void generateNewPassword() {
-		password = PassGen.getPassword();
+	private static String generateNewPassword() {
+		return PassGen.getPassword(16);
 	}
 
 }
