@@ -18,6 +18,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import java.awt.Component;
 
 public class Grackle {
 	
@@ -77,8 +78,9 @@ public class Grackle {
 		PassPanel.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JLabel lblPassword = new JLabel(password);
+		lblPassword.setAlignmentX(Component.CENTER_ALIGNMENT);
 		PassPanel.add(lblPassword);
-		lblPassword.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblPassword.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblPassword.setHorizontalAlignment(SwingConstants.CENTER);
 		/********************************************************/
 		
