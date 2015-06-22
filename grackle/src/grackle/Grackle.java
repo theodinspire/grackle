@@ -26,7 +26,7 @@ public class Grackle {
 
 	private JFrame frmGrackle;
 	
-	static private Image icon = Toolkit.getDefaultToolkit().getImage("src/resources/grackleicon.jpg");
+	static private Image icon = Toolkit.getDefaultToolkit().getImage(Grackle.class.getResource("/images/grackleicon.jpg"));
 	//static private Image backgound = Toolkit.getDefaultToolkit().getImage("src/resources/grackle.jpg");
 	//static private ImageIcon background = new ImageIcon("src/resources/grackle.jpg");
 
